@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick.css">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="/assets/template/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/template/vendor/photobox/photobox.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/template/vendor/photobox/photobox.ie.css"><![endif]-->
+
+    <link rel="stylesheet" href="/assets/template/css/main.css">
+
+</head>
+<body class="main">
+
+
+<div class="loaderArea">
+   <div class="loader">
+       <span class="cogs-live">
+            <span class="cogs-live__box"></span>
+        </span>
+   </div>
+</div>
+
+
+<div class="main-top">
+    <div class="logo-box">
+        <a href="/"><img itemprop="image url" src="/assets/template/img/logo-main.png" alt=""></a>
+    </div>
+
+    <div class="main-top__line">
+        <div class="search">
+            <form action="">
+                <input type="text" class="search__input" placeholder=" Поиск по артикулу или номеру детали"/>
+                <!-- <button type="submit" class="search__submit"></button> -->
+                <button class="btn-cogs search__submit">
+                <span class="cogs-live">
+                    <span class="cogs-live__box"></span>
+                </span>
+                </button>
+            </form>
+        </div>
+        <div class="main-top__menus">
+            <div class="m-catalog-menu" toggle-class="active" >
+
+                <a class="m-catalog-menu__caption" href="#">
+                    <i class="m-catalog-menu__burger"></i>
+                    <span class="m-catalog-menu__title">Каталог</span>
+                    <i class="m-catalog-menu__arrow"></i>
+                </a>
+                <div class="m-catalog-menu__list">
+                    <div class="m-catalog-menu__body">
+                        <p>111111111</p>
+                        <p>222222222</p>
+                        <p>333333333</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="m-cabinet-menu">
+                <a class="m-cabinet-menu__caption auth-toggle" href="#authform">
+                    <span class="m-catalog-menu__title">Личный кабинет</span>
+                    <i class="m-cabinet-menu__arrow"></i>
+                </a>
+
+            </div>
+            <div class="main-top__cart">
+                <img src="/assets/template/img/menu-truck.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: none;">
+    <div class="cabinet__box" id="authform">
+        <div class="cabinet__header">
+            <span>Вход</span>
+            <a href="#">Регистрация</a>
+        </div>
+        <form action="">
+            <input type="text" placeholder="Логин">
+            <input type="password" placeholder="Пароль">
+            <div class="cabinet__actions">
+                <div class="cabinet__links">
+                    <label class="cabinet__rememmber">
+                        <input name="q2" type="checkbox" class="checkbox">
+                        <span class="checkbox-custom"></span>
+                        <span class="label"> Запомнить</span>
+                    </label>
+                    <a class="cabinet__forgot" href="#">Забыли пароль?</a>
+                </div>
+                <div class="cabinet__submit">
+                    <button class="btn">Войти</button>
+                </div>
+            </div>
+            <div class="cabinet-oauth">
+                <div class="cabinet-oauth__title">Войти с помощью:</div>
+                <div class="cabinet-oauth__services">
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--vk"></a>
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--facebook"></a>
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--google"></a>
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--mailru"></a>
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--windows"></a>
+                    <a href="" class="cabinet-oauth__service cabinet-oauth__service--yandex"></a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>document.title="Главная заставка"</script>
+
+
+<div class="main-center">
+
+    <div class="main-section">
+        <div class="main-brands">
+            <a class="main-brands__item main-brands__item--hino active" href="/main-inner.html" ajax-load=".main-section"></a>
+            <a class="main-brands__item main-brands__item--mitsu" href="/main-inner-mitsu.html" ajax-load=".main-section"></a>
+            <a class="main-brands__item main-brands__item--isuzu" href="/main-inner-isuzu.html" ajax-load=".main-section"></a>
+        </div>
+        <div class="main-models">
+            <div class="main-models__list">
+                <a href="/main-inner-category.html" class="main-models__item active" ajax-load=".main-category">
+                    <div class="main-models__image">
+                        <img src="/assets/template/img/models/hino/300-ico03.png" alt="">
+                    </div>
+                    <div class="main-models__caption">Hino 300</div>
+                </a>
+                <a href="/main-inner-category.html" class="main-models__item" ajax-load=".main-category">
+                    <div class="main-models__image">
+                        <img src="/assets/template/img/models/hino/500-ico03.png" alt="">
+                    </div>
+                    <div class="main-models__caption">Hino 500</div>
+                </a>
+                <a href="/main-inner-category.html" class="main-models__item" ajax-load=".main-category">
+                    <div class="main-models__image">
+                        <img src="/assets/template/img/models/hino/700-ico03.png" alt="">
+                    </div>
+                    <div class="main-models__caption">Hino 700</div>
+                </a>
+                
+                <div class="main-models__circle"></div>
+            </div>
+
+
+            <div class="main-category">
+                <div class="main-category__list">
+                    <a href="#" class="main-category__item main-category__item--engine" >
+                        <div class="main-category__name">Двигатель</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--amort">
+                        <div class="main-category__name">Ходовая часть</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--shassis">
+                        <div class="main-category__name">Шасси (рама)</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--electro">
+                        <div class="main-category__name">Электрика</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--body">
+                        <div class="main-category__name">Кузов</div>
+                    </a>
+
+                    <a href="#" class="main-category__item main-category__item--oil">
+                        <div class="main-category__name">Масла и жидкости</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--to">
+                        <div class="main-category__name">Расходники<br /> для ТО</div>
+                    </a>
+                    <a href="#" class="main-category__item main-category__item--service">
+                        <div class="main-category__name">Сервис</div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+
+    </div>
+
+
+
+</div>
+
+
+
+<div class="main-footer">
+    <div class="main-footer__left">
+        <div class="main-footer__copyright">
+            Copyright 2018 · All rights reserved.
+        </div>
+    </div>
+    <div class="main-footer__right">
+        <a href="tel:+74955550000" class="main-footer__phone metal-text">+7 (495) 555 00 00</a>
+    </div>
+</div>
+
+
+
+<!--div slide-index="1">
+    <img  src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="" style="">
+</div>
+<div slide-index="2">
+    <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(0.785398rad);">
+</div>
+<div slide-index="3">
+    <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(1.5708rad);">
+</div>
+<div slide-index="4">
+    <img src="https://source.unsplash.com/nvzvOPQW0gc/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(2.35619rad);">
+</div>
+<div slide-index="5">
+    <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(3.14159rad);">
+</div>
+<div slide-index="6">
+    <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(3.92699rad);">
+</div>
+<div slide-index="7">
+    <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(4.71239rad);">
+</div>
+<div slide-index="8">
+    <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" style=" transform-origin: 50% 50% -600.159px; transform: rotateY(5.49779rad);">
+</div>
+<div slide-index="9">
+    <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" style=" ">
+</div>
+<div slide-index="10">
+    <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" style=" ">
+</div>
+<div slide-index="11">
+    <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" style=" ">
+</div>
+<div slide-index="12">
+    <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" style=" ">
+</div>-->
+
+
+<script src="assets/template/vendor/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="assets/template/vendor/slick/slick.js"></script>
+<script src="assets/template/vendor/magnific-popup/magnific-popup.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/assets/template/vendor/selectric/selectric.css" />
+<script src="/assets/template/vendor/selectric/jquery.selectric.min.js"></script>
+<!--script src="assets/template/vendor/wow.min.js"></script>
+<script>
+    new WOW({
+        live: true
+    }).init();
+</script-->
+<link rel="stylesheet" href="/assets/template/vendor/animejs/anime.css" />
+<script src="assets/template/vendor/animejs/js/anime.2.1.0.js"></script>
+<script src="assets/template/js/scripts.js"></script>
+
+
+
+
+</body>
+</html>

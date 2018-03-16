@@ -1,0 +1,19 @@
+.order{
+  &__list{
+    @media($bp-larger-than-desktop){
+      width: 85%;
+    }
+  }
+  &__text{
+    p{
+      color: #55585e;
+      font-size: 14px;
+    }
+    a{
+      text-decoration: none;
+      &:hover{
+        color: $red;
+      }
+    }
+  }
+}

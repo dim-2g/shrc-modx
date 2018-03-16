@@ -1,0 +1,144 @@
+.reviews{
+  &__header{
+    color: #55585e;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 44px;
+  }
+  &__item{
+    //min-height: 290px;
+    border-bottom: 1px solid #c1c1c1;
+    display: flex;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    @media($bp-larger-than-phablet){
+      flex-direction: row;
+    }
+  }
+  &__card{
+    width: 180px;
+    margin-right: 40px;
+  }
+  &__image{
+    margin-bottom: 22px;
+    img{
+      max-width: none;
+    }
+  }
+  &__name{
+    color: #313335;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 8px;
+    @media($bp-larger-than-phablet){
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+  &__box{
+
+  }
+  &__date{
+    margin-bottom: 20px;
+  }
+  &__caption{
+    color: #313335;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+  &__stars{
+    margin-bottom: 18px;
+  }
+  &__text{
+    margin-bottom: 30px;
+  }
+  &__answer-name{
+    color: #313335;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  &__answer{
+    position: relative;
+    display: inline-block;
+    padding-left: 72px;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($reviews-car);
+      left: 0;
+      top: 0;
+      display: inline-block;
+    }
+  }
+
+  &__add-caption{
+    color: #313335;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 38px;
+  }
+
+
+
+}
+.reviews-form{
+  max-width: 1090px;
+  margin-bottom: 40px;
+  &__box{
+    display: flex;
+    margin-bottom: 7px;
+  }
+  &__caption{
+    color: #313335;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 38px;
+  }
+  &__contact{
+    margin-right: 32px;
+  }
+  &__text{
+    flex: 1;
+  }
+  &__label{
+    width: 100px;
+    display: inline-block;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    &--text{
+      align-items: flex-start;
+      .reviews-form__label{
+        padding-top: 10px;
+      }
+    }
+  }
+  &__btn{
+    text-align: right;
+    .btn-o{
+      text-transform: uppercase;
+      width: 170px;
+      text-align: center;
+      padding: 9px;
+    }
+  }
+  input[type="text"] {
+    border: 1px solid #b7b7b7;
+    width: 286px;
+    height: 37px;
+    font-size: 14px;
+    color: #989a9e;
+    padding: 2px 15px;
+  }
+  textarea {
+    height: 172px;
+    width: 100%;
+    max-width: 574px;
+    padding: 8px 15px;
+  }
+}

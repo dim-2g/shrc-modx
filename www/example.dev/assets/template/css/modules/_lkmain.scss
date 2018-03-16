@@ -1,0 +1,138 @@
+.lcabinet{
+  margin-top: 34px;
+  min-height: 1200px;
+}
+.lcabinet-profile{
+  display: flex;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #cfcfcf;
+  flex-direction: column;
+  align-items: center;
+  @media($bp-larger-than-tablet){
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &__image{
+    height:158px;
+    width: 162px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-tablet){
+      margin-right: 34px;
+    }
+  }
+  &__info{
+
+  }
+  &__name{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  &__setting{
+    margin-left: 11px;
+    color: $red;
+    position: relative;
+    font-size: 15px;
+    text-decoration: none;
+    padding-left: 30px;
+    &:before{
+      position: absolute;
+      content: "";
+      @include sprite($lk-setting);
+      top:0;
+      left: -7px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+.lcabinet-box{
+    padding: 38px 0;
+    //margin-left: 71px;
+    //margin-right: -38px;
+    //margin-top: 33px;
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 38px 0 3px;
+    justify-content: center;
+  }
+  &__item{
+    padding: 0 35px;
+    margin-bottom: 35px;
+  }
+  &__card{
+    display: inline-block;
+    width: 190px;
+    border: 1px solid #cfcfcf;
+    box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.29);
+    transition: all 0.5s cubic-bezier(0.3, 0, 0.2, 1);
+    height: 180px;
+    margin-bottom: 23px;
+    text-decoration: none;
+  }
+  &__image{
+    height: 125px;
+    line-height: 130px;
+    text-align: center;
+    margin-bottom: 8px;
+    img{
+      vertical-align: middle;
+    }
+  }
+  &__name{
+    color: #46484c;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 18px;
+  }
+  &__text{
+    max-width: 198px;
+    color: #989a9e;
+    margin-left: 2px;
+    line-height: 140%;
+  }
+}
+.lcabinet-forum{
+  border-top: 1px solid #cfcfcf;
+  padding-top: 20px;
+  &__box{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    margin-bottom: 24px;
+  }
+  &__caption{
+    color: #313335;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 38px;
+  }
+  &__setting{
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 28px;
+    margin-top: 7px;
+    &:before{
+      position: relative;
+      content: "";
+      @include sprite($lk-setting);
+      top:0;
+      left: 0px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  &__text{
+    margin-left: 4px;
+    color: #989a9e;
+    margin-bottom: 50px;
+  }
+}

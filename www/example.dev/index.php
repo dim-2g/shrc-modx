@@ -17,7 +17,7 @@ if (!defined('MODX_API_MODE')) {
 }
 
 /* this can be used to disable caching in MODX absolutely */
-$modx_cache_disabled= false;
+$modx_cache_disabled= true;
 
 /* include custom core config and define core path */
 @include(dirname(__FILE__) . '/config.core.php');

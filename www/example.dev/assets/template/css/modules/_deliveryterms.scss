@@ -1,0 +1,22 @@
+.text-box{
+  .delivery{
+    &__express{
+    font-size: 14px;
+    font-weight: bold;
+    color: #c11f38;
+    }
+    &__list{
+      margin-bottom: 25px;
+      li{
+        color: #313335;
+        font-weight: bold;
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 5px;
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+}

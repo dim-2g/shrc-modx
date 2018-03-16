@@ -12,30 +12,64 @@
   ),
   'eventMap' => 
   array (
+    'msOnChangeOrderStatus' => 
+    array (
+      3 => '3',
+    ),
     'OnChunkFormPrerender' => 
     array (
-      1 => '1',
+      5 => '5',
     ),
     'OnDocFormPrerender' => 
     array (
-      1 => '1',
+      4 => '4',
+      5 => '5',
+    ),
+    'OnDocFormSave' => 
+    array (
+      4 => '4',
+      6 => '6',
+    ),
+    'OnEmptyTrash' => 
+    array (
+      6 => '6',
     ),
     'OnFileCreateFormPrerender' => 
     array (
-      1 => '1',
+      5 => '5',
     ),
     'OnFileEditFormPrerender' => 
     array (
-      1 => '1',
+      5 => '5',
+    ),
+    'OnHandleRequest' => 
+    array (
+      3 => '3',
+    ),
+    'OnLoadWebDocument' => 
+    array (
+      4 => '4',
+      6 => '6',
+      3 => '3',
+    ),
+    'OnManagerAuthentication' => 
+    array (
+      4 => '4',
     ),
     'OnManagerPageBeforeRender' => 
     array (
-      7 => '7',
+      2 => '2',
+      5 => '5',
       4 => '4',
-      1 => '1',
+      7 => '7',
+    ),
+    'OnManagerPageInit' => 
+    array (
+      4 => '4',
     ),
     'OnMODXInit' => 
     array (
+      1 => '1',
       3 => '3',
     ),
     'OnPageNotFound' => 
@@ -44,7 +78,7 @@
     ),
     'OnPluginFormPrerender' => 
     array (
-      1 => '1',
+      5 => '5',
     ),
     'OnRichTextBrowserInit' => 
     array (
@@ -56,24 +90,40 @@
     ),
     'OnRichTextEditorRegister' => 
     array (
+      5 => '5',
       7 => '7',
-      1 => '1',
     ),
     'OnSiteRefresh' => 
     array (
-      3 => '3',
+      1 => '1',
+      6 => '6',
     ),
     'OnSnipFormPrerender' => 
     array (
-      1 => '1',
+      5 => '5',
     ),
     'OnTempFormPrerender' => 
     array (
-      1 => '1',
+      4 => '4',
+      5 => '5',
+    ),
+    'OnUserSave' => 
+    array (
+      6 => '6',
+      3 => '3',
+    ),
+    'OnWebPageComplete' => 
+    array (
+      6 => '6',
+    ),
+    'OnWebPageInit' => 
+    array (
+      3 => '3',
     ),
     'OnWebPagePrerender' => 
     array (
-      3 => '3',
+      1 => '1',
+      6 => '6',
     ),
   ),
   'pluginCache' => 
@@ -81,6 +131,387 @@
     1 => 
     array (
       'id' => '1',
+      'source' => '1',
+      'property_preprocess' => '0',
+      'name' => 'pdoTools',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '1',
+      'cache_type' => '0',
+      'plugincode' => '/** @var modX $modx */
+switch ($modx->event->name) {
+
+    case \'OnMODXInit\':
+        $fqn = $modx->getOption(\'pdoTools.class\', null, \'pdotools.pdotools\', true);
+        $path = $modx->getOption(\'pdotools_class_path\', null, MODX_CORE_PATH . \'components/pdotools/model/\', true);
+        $modx->loadClass($fqn, $path, false, true);
+
+        $fqn = $modx->getOption(\'pdoFetch.class\', null, \'pdotools.pdofetch\', true);
+        $path = $modx->getOption(\'pdofetch_class_path\', null, MODX_CORE_PATH . \'components/pdotools/model/\', true);
+        $modx->loadClass($fqn, $path, false, true);
+        break;
+
+    case \'OnSiteRefresh\':
+        /** @var pdoTools $pdoTools */
+        if ($pdoTools = $modx->getService(\'pdoTools\')) {
+            if ($pdoTools->clearFileCache()) {
+                $modx->log(modX::LOG_LEVEL_INFO, $modx->lexicon(\'refresh_default\') . \': pdoTools\');
+            }
+        }
+        break;
+
+    case \'OnWebPagePrerender\':
+        $parser = $modx->getParser();
+        if ($parser instanceof pdoParser) {
+            foreach ($parser->pdoTools->ignores as $key => $val) {
+                $modx->resource->_output = str_replace($key, $val, $modx->resource->_output);
+            }
+        }
+        break;
+}',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => 'core/components/pdotools/elements/plugins/plugin.pdotools.php',
+    ),
+    2 => 
+    array (
+      'id' => '2',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'FormIt',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '3',
+      'cache_type' => '0',
+      'plugincode' => '/**
+ * FormIt
+ *
+ * Copyright 2009-2017 by Sterc <modx@sterc.nl>
+ *
+ * FormIt is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option) any
+ * later version.
+ *
+ * FormIt is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * FormIt; if not, write to the Free Software Foundation, Inc., 59 Temple Place,
+ * Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package formit
+ */
+/**
+ * FormIt plugin
+ *
+ * @package formit
+ */
+
+$formit = $modx->getService(
+    \'formit\',
+    \'FormIt\',
+    $modx->getOption(\'formit.core_path\', null, $modx->getOption(\'core_path\').\'components/formit/\') .\'model/formit/\',
+    array()
+);
+
+if (!($formit instanceof FormIt)) {
+    return;
+}
+
+switch ($modx->event->name) {
+    case \'OnManagerPageBeforeRender\':
+        // If migration status is false, show migrate alert message bar in manager
+        if (method_exists(\'FormIt\',\'encryptionMigrationStatus\')) {
+            if (!$formit->encryptionMigrationStatus()) {
+                $modx->lexicon->load(\'formit:mgr\');
+                $properties = array(\'message\' => $modx->lexicon(\'formit.migrate_alert\'));
+                $chunk = $formit->_getTplChunk(\'migrate/alert\');
+                if ($chunk) {
+                    $modx->regClientStartupHTMLBlock($chunk->process($properties));
+                    $modx->regClientCSS($formit->config[\'cssUrl\'] . \'migrate.css\');
+                }
+            }
+        }
+}',
+      'locked' => '0',
+      'properties' => 'a:0:{}',
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
+    ),
+    3 => 
+    array (
+      'id' => '3',
+      'source' => '1',
+      'property_preprocess' => '0',
+      'name' => 'miniShop2',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '5',
+      'cache_type' => '0',
+      'plugincode' => '/** @var modX $modx */
+switch ($modx->event->name) {
+
+    case \'OnMODXInit\':
+        // Load extensions
+        /** @var miniShop2 $miniShop2 */
+        if ($miniShop2 = $modx->getService(\'miniShop2\')) {
+            $miniShop2->loadMap();
+        }
+        break;
+
+    case \'OnHandleRequest\':
+        // Handle ajax requests
+        $isAjax = !empty($_SERVER[\'HTTP_X_REQUESTED_WITH\']) && $_SERVER[\'HTTP_X_REQUESTED_WITH\'] == \'XMLHttpRequest\';
+        if (empty($_REQUEST[\'ms2_action\']) || !$isAjax) {
+            return;
+        }
+        /** @var miniShop2 $miniShop2 */
+        if ($miniShop2 = $modx->getService(\'miniShop2\')) {
+            $response = $miniShop2->handleRequest($_REQUEST[\'ms2_action\'], @$_POST);
+            @session_write_close();
+            exit($response);
+        }
+        break;
+
+    case \'OnLoadWebDocument\':
+        // Handle non-ajax requests
+        if (!empty($_REQUEST[\'ms2_action\'])) {
+            if ($miniShop2 = $modx->getService(\'miniShop2\')) {
+                $miniShop2->handleRequest($_REQUEST[\'ms2_action\'], @$_POST);
+            }
+        }
+        // Set product fields as [[*resource]] tags
+        if ($modx->resource->get(\'class_key\') == \'msProduct\') {
+            if ($dataMeta = $modx->getFieldMeta(\'msProductData\')) {
+                unset($dataMeta[\'id\']);
+                $modx->resource->_fieldMeta = array_merge(
+                    $modx->resource->_fieldMeta,
+                    $dataMeta
+                );
+            }
+        }
+        break;
+
+    case \'OnWebPageInit\':
+        // Set referrer cookie
+        /** @var msCustomerProfile $profile */
+        $referrerVar = $modx->getOption(\'ms2_referrer_code_var\', null, \'msfrom\', true);
+        $cookieVar = $modx->getOption(\'ms2_referrer_cookie_var\', null, \'msreferrer\', true);
+        $cookieTime = $modx->getOption(\'ms2_referrer_time\', null, 86400 * 365, true);
+
+        if (!$modx->user->isAuthenticated() && !empty($_REQUEST[$referrerVar])) {
+            $code = trim($_REQUEST[$referrerVar]);
+            if ($profile = $modx->getObject(\'msCustomerProfile\', array(\'referrer_code\' => $code))) {
+                $referrer = $profile->get(\'id\');
+                setcookie($cookieVar, $referrer, time() + $cookieTime);
+            }
+        }
+        break;
+
+    case \'OnUserSave\':
+        // Save referrer id
+        if ($mode == modSystemEvent::MODE_NEW) {
+            /** @var modUser $user */
+            $cookieVar = $modx->getOption(\'ms2_referrer_cookie_var\', null, \'msreferrer\', true);
+            $cookieTime = $modx->getOption(\'ms2_referrer_time\', null, 86400 * 365, true);
+            if ($modx->context->key != \'mgr\' && !empty($_COOKIE[$cookieVar])) {
+                if ($profile = $modx->getObject(\'msCustomerProfile\', $user->get(\'id\'))) {
+                    if (!$profile->get(\'referrer_id\') && $_COOKIE[$cookieVar] != $user->get(\'id\')) {
+                        $profile->set(\'referrer_id\', (int)$_COOKIE[$cookieVar]);
+                        $profile->save();
+                    }
+                }
+                setcookie($cookieVar, \'\', time() - $cookieTime);
+            }
+        }
+        break;
+
+    case \'msOnChangeOrderStatus\':
+        // Update customer stat
+        if (empty($status) || $status != 2) {
+            return;
+        }
+
+        /** @var modUser $user */
+        if ($user = $order->getOne(\'User\')) {
+            $q = $modx->newQuery(\'msOrder\', array(\'type\' => 0));
+            $q->innerJoin(\'modUser\', \'modUser\', array(\'modUser.id = msOrder.user_id\'));
+            $q->innerJoin(\'msOrderLog\', \'msOrderLog\', array(
+                \'msOrderLog.order_id = msOrder.id\',
+                \'msOrderLog.action\' => \'status\',
+                \'msOrderLog.entry\' => $status,
+            ));
+            $q->where(array(\'msOrder.user_id\' => $user->get(\'id\')));
+            $q->groupby(\'msOrder.user_id\');
+            $q->select(\'SUM(msOrder.cost)\');
+            if ($q->prepare() && $q->stmt->execute()) {
+                $spent = $q->stmt->fetchColumn();
+                /** @var msCustomerProfile $profile */
+                if ($profile = $modx->getObject(\'msCustomerProfile\', $user->get(\'id\'))) {
+                    $profile->set(\'spent\', $spent);
+                    $profile->save();
+                }
+            }
+        }
+        break;
+}',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => 'core/components/minishop2/elements/plugins/plugin.minishop2.php',
+    ),
+    4 => 
+    array (
+      'id' => '4',
+      'source' => '1',
+      'property_preprocess' => '0',
+      'name' => 'AdminTools',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '6',
+      'cache_type' => '0',
+      'plugincode' => '/** @var array $scriptProperties */
+$path = $modx->getOption(\'admintools_core_path\', null, $modx->getOption(\'core_path\') . \'components/admintools/\').\'model/admintools/\';
+/** @var AdminTools $AdminTools */
+$AdminTools = $modx->getService(\'admintools\',\'AdminTools\',$path);
+$elementType = null;
+if ($AdminTools instanceof AdminTools) {
+    switch ($modx->event->name) {
+        case \'OnManagerPageBeforeRender\':
+            if ($modx->user->id) $AdminTools->initialize();
+            break;
+        case \'OnDocFormSave\':
+            if ($modx->getOption(\'admintools_clear_only_resource_cache\',null,false)) {
+                if ($modx->event->params[\'mode\'] != \'upd\') {
+                    return;
+                }
+                if ($resource->get(\'syncsite\')) {
+                    $AdminTools->clearResourceCache($resource);
+                }
+                if (!empty($_POST[\'createCache\'])) {
+                    $AdminTools->createResourceCache($resource->uri);
+                }
+            }
+            break;
+        case \'OnManagerPageInit\':
+            if (!$modx->user->isAuthenticated(\'mgr\') && $modx->getOption(\'admintools_email_authorization\', null, false)) {
+                $id = (int) $modx->getOption(\'admintools_loginform_resource\');
+                if (!empty($id) && $modx->getCount(\'modResource\', array(\'id\'=>$id, \'published\'=>1, \'deleted\'=>0))) {
+                    $url = $modx->makeUrl($id,\'\',\'\',\'full\');
+                    $modx->setOption(\'manager_login_url_alternate\', $url);
+                }
+            }
+            break;
+        case \'OnManagerAuthentication\':
+            if ($modx->getOption(\'admintools_user_can_login\', null, false)) {
+                $modx->setOption(\'admintools_user_can_login\', false);
+                $modx->event->output(array(\'true\'));
+            }
+            break;
+        case \'OnLoadWebDocument\':
+            if ($modx->user->isAuthenticated($modx->context->get(\'key\')) && (!$modx->user->active || $modx->user->Profile->blocked)) {
+                $modx->runProcessor(\'security/logout\');
+            }
+            if ($modx->getOption(\'admintools_alternative_permissions\', null, false) && !$AdminTools->hasPermissions()){
+                $modx->sendUnauthorizedPage();
+            }
+            break;
+        case \'OnTempFormPrerender\':
+            if ($modx->getOption(\'admintools_template_resource_relationship\', null, true)) {
+                $modx->controller->addLastJavascript($AdminTools->getOption(\'jsUrl\') . \'mgr/templates.js\');
+            }
+            break;
+        case \'OnDocFormPrerender\':
+            $_html = array();
+            if ($modx->getOption(\'admintools_template_resource_relationship\', null, true)) {
+                $_html[\'tpl_res_relationship\'] = \'
+            var tmpl = Ext.getCmp("modx-resource-template");
+            if (tmpl.getValue()) tmpl.label.update(_("resource_template") + "&nbsp;&nbsp;<a href=\\"?a=element/template/update&id=" + tmpl.getValue() + "\\"><i class=\\"icon icon-external-link\\"></i></a>");\';
+            }
+            if ($modx->getOption(\'admintools_clear_only_resource_cache\', null, true) && $resource instanceof modResource) {
+                $_html[\'create_resource_cache\'] = \'
+            var cb = Ext.create({
+                xtype: "xcheckbox",
+                boxLabel: _("admintools_create_resource_cache"),
+                description: _("admintools_create_resource_cache_help"),
+                hideLabel: true,
+                name: "createCache",
+                id: "createCache",
+                checked: \'. intval($modx->getOption(\'admintools_create_resource_cache\', null, false)) .\'
+            });
+            if (Ext.getCmp("modx-page-settings-right-box-right")) {
+                Ext.getCmp("modx-page-settings-right-box-right").insert(2,cb);
+                Ext.getCmp("modx-page-settings-right-box-left").add(Ext.getCmp("modx-resource-uri-override"));
+                Ext.getCmp("modx-panel-resource").on("success", function(o){
+                    if (o.result.object.createCache != 0) {
+                        cb.setValue(true);
+                    }
+                });
+            }\';
+            }
+            $output = \'\';
+            if (!empty($_html)) {
+            $output .= \'
+    Ext.onReady(function() {
+        setTimeout(function(){\' . implode("\\n", $_html) . \'
+        }, 200);
+    });\';
+            }
+            if ($modx->getOption(\'admintools_alternative_permissions\', null, true) && $modx->hasPermission(\'access_permissions\')) {
+                $modx->controller->addLastJavascript($AdminTools->getOption(\'jsUrl\') . \'mgr/permissions.js\');
+                $output .= \'
+    Ext.ComponentMgr.onAvailable("modx-resource-tabs", function() {
+		this.on("beforerender", function() {
+			this.add({
+				title: _("admintools_permissions"),
+				border: false,
+				items: [{
+					layout: "anchor",
+					border: false,
+					items: [{
+						html: _("admintools_permissions_desc"),
+						border: false,
+						bodyCssClass: "panel-desc"
+					}, {
+						xtype: "admintools-grid-permissions",
+						anchor: "100%",
+						cls: "main-wrapper",
+						resource: \' . $id . \'
+					}]
+				}]
+			});
+		});
+	});
+\';
+            }
+            if (!empty($output)) $modx->controller->addHtml(\'<script type="text/javascript">\' . $output . \'</script>\');
+            break;
+        /*case \'OnWebPagePrerender\':
+            $output = &$modx->resource->_output;
+            $replace = "";
+            preg_replace(\'/</script>/\', $replace, $output, 1);
+            break;*/
+    }
+}',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => 'core/components/admintools/elements/plugins/plugin.admintools.php',
+    ),
+    5 => 
+    array (
+      'id' => '5',
       'source' => '0',
       'property_preprocess' => '0',
       'name' => 'Ace',
@@ -245,150 +676,139 @@ if ($script) {
       'static' => '0',
       'static_file' => 'ace/elements/plugins/ace.plugin.php',
     ),
-    3 => 
-    array (
-      'id' => '3',
-      'source' => '1',
-      'property_preprocess' => '0',
-      'name' => 'pdoTools',
-      'description' => '',
-      'editor_type' => '0',
-      'category' => '2',
-      'cache_type' => '0',
-      'plugincode' => '/** @var modX $modx */
-switch ($modx->event->name) {
-
-    case \'OnMODXInit\':
-        $fqn = $modx->getOption(\'pdoTools.class\', null, \'pdotools.pdotools\', true);
-        $path = $modx->getOption(\'pdotools_class_path\', null, MODX_CORE_PATH . \'components/pdotools/model/\', true);
-        $modx->loadClass($fqn, $path, false, true);
-
-        $fqn = $modx->getOption(\'pdoFetch.class\', null, \'pdotools.pdofetch\', true);
-        $path = $modx->getOption(\'pdofetch_class_path\', null, MODX_CORE_PATH . \'components/pdotools/model/\', true);
-        $modx->loadClass($fqn, $path, false, true);
-        break;
-
-    case \'OnSiteRefresh\':
-        /** @var pdoTools $pdoTools */
-        if ($pdoTools = $modx->getService(\'pdoTools\')) {
-            if ($pdoTools->clearFileCache()) {
-                $modx->log(modX::LOG_LEVEL_INFO, $modx->lexicon(\'refresh_default\') . \': pdoTools\');
-            }
-        }
-        break;
-
-    case \'OnWebPagePrerender\':
-        $parser = $modx->getParser();
-        if ($parser instanceof pdoParser) {
-            foreach ($parser->pdoTools->ignores as $key => $val) {
-                $modx->resource->_output = str_replace($key, $val, $modx->resource->_output);
-            }
-        }
-        break;
-}',
-      'locked' => '0',
-      'properties' => NULL,
-      'disabled' => '0',
-      'moduleguid' => '',
-      'static' => '0',
-      'static_file' => 'core/components/pdotools/elements/plugins/plugin.pdotools.php',
-    ),
-    4 => 
-    array (
-      'id' => '4',
-      'source' => '1',
-      'property_preprocess' => '0',
-      'name' => 'simpleUpdater',
-      'description' => '',
-      'editor_type' => '0',
-      'category' => '3',
-      'cache_type' => '0',
-      'plugincode' => 'switch ($modx->event->name) {
-    case \'OnManagerPageBeforeRender\':
-        $modx->controller->addLexiconTopic(\'simpleupdater:default\');
-        $modx->controller->addCss($modx->getOption(\'assets_url\').\'components/simpleupdater/css/mgr/main.css\');
-        $modx->controller->addJavascript($modx->getOption(\'assets_url\').\'components/simpleupdater/js/mgr/widgets/update.button.js\');
-        $response = $modx->runProcessor(\'mgr/version/check\', array(), array(\'processors_path\' => $modx->getOption(\'core_path\') . \'components/simpleupdater/processors/\'));
-        $resObj = $response->getObject();
-        $_html = "<script>	var simpleUpdateConfig = " . $modx->toJSON($resObj) . ";</script>";
-        $modx->controller->addHtml($_html);
-        break;
-}',
-      'locked' => '0',
-      'properties' => NULL,
-      'disabled' => '0',
-      'moduleguid' => '',
-      'static' => '0',
-      'static_file' => 'core/components/simpleupdater/elements/plugins/plugin.simpleupdater.php',
-    ),
     6 => 
     array (
       'id' => '6',
       'source' => '1',
       'property_preprocess' => '0',
-      'name' => 'TemplateUploader',
+      'name' => 'Tickets',
       'description' => '',
       'editor_type' => '0',
-      'category' => '0',
+      'category' => '13',
       'cache_type' => '0',
-      'plugincode' => '//if (strpos($_SERVER[\'HTTP_HOST\'],\'.r404.ru\')===false) return;
-$aUrlInfo = pathinfo(preg_replace(\'#(.*)\\?.*$#\',\'$1\',$_SERVER[\'REQUEST_URI\']));
-if (strpos($_SERVER[\'REQUEST_URI\'],\'/cache/\')) return;
-//var_dump($_SERVER[\'REQUEST_URI\']);
-//die();
-//var_dump($aUrlInfo[\'extension\']);
+      'plugincode' => '/** @var modX $modx */
+switch ($modx->event->name) {
 
-$aTo = array(\'/wp-content/uploads/\' => \'/assets/uploads/\');
-$aDownloadExt = array(\'jpg\',\'jpeg\',\'gif\',\'png\',\'css\',\'js\',\'ttf\',\'eot\',\'woff\',\'woff2\',\'svg\',\'ico\',\'htc\',\'xls\',\'xlsx\',\'doc\',\'docx\',\'pdf\',\'swf\',\'flv\',\'cur\');
-if (!in_array(strtolower($aUrlInfo[\'extension\']),$aDownloadExt)) return;
+    case \'OnSiteRefresh\':
+        if ($modx->cacheManager->refresh(array(\'default/tickets\' => array()))) {
+            $modx->log(modX::LOG_LEVEL_INFO, $modx->lexicon(\'refresh_default\') . \': Tickets\');
+        }
+        break;
 
+    case \'OnDocFormSave\':
+        /** @var Ticket $resource */
+        if ($mode == \'new\' && $resource->class_key == "Ticket") {
+            $modx->cacheManager->delete(\'tickets/latest.tickets\');
+        }
+        break;
 
-$sMainDomain = \'http://www.dianix.ru\';
-$sFullUrl = $sMainDomain.$_SERVER[\'REQUEST_URI\'];
+    case \'OnWebPagePrerender\':
+        $output = &$modx->resource->_output;
+        $output = str_replace(
+            array(\'*(*(*(*(*(*\', \'*)*)*)*)*)*\', \'~(~(~(~(~(~\', \'~)~)~)~)~)~\'),
+            array(\'[\', \']\', \'{\', \'}\'),
+            $output
+        );
+        break;
 
-$sFile = file_get_contents($sFullUrl);
-if (empty($sFile)) {
-    var_dump($sFullUrl);
-    die(\'empty\');
-    return;
-    
-}
-$sNewDir = dirname($_SERVER[\'REQUEST_URI\']);
+    case \'OnPageNotFound\':
+        // It is working only with friendly urls enabled
+        $q = trim(@$_REQUEST[$modx->context->getOption(\'request_param_alias\', \'q\')]);
+        $matches = explode(\'/\', rtrim($q, \'/\'));
+        if (count($matches) < 2) {
+            return;
+        }
 
-if (!file_exists($_SERVER[\'DOCUMENT_ROOT\'].$sNewDir.\'/\'))
-$res = mkdir($_SERVER[\'DOCUMENT_ROOT\'].$sNewDir.\'/\',0755,true);
-$sUrl = preg_replace(\'#(.*)\\?.*$#\',\'$1\',$_SERVER[\'REQUEST_URI\']);
-file_put_contents($_SERVER[\'DOCUMENT_ROOT\'].rawurldecode($sUrl),$sFile);
-header(\'Location: \'.$_SERVER[\'REQUEST_URI\']);
-exit;
+        $ticket_uri = array_pop($matches);
+        $section_uri = implode(\'/\', $matches) . \'/\';
 
+        if ($section_id = $modx->findResource($section_uri)) {
+            /** @var TicketsSection $section */
+            if ($section = $modx->getObject(\'TicketsSection\', $section_id)) {
+                if (is_numeric($ticket_uri)) {
+                    $ticket_id = $ticket_uri;
+                } elseif (preg_match(\'#^\\d+#\', $ticket_uri, $tmp)) {
+                    $ticket_id = $tmp[0];
+                } else {
+                    $properties = $section->getProperties(\'tickets\');
+                    if (!empty($properties[\'uri\']) && strpos($properties[\'uri\'], \'%id\') !== false) {
+                        $pcre = str_replace(\'%id\', \'([0-9]+)\', $properties[\'uri\']);
+                        $pcre = preg_replace(\'#(\\%[a-z]+)#\', \'(?:.*?)\', $pcre);
+                        if (@preg_match(\'#\' . trim($pcre, \'/\') . \'#\', $ticket_uri, $matches)) {
+                            $ticket_id = $matches[1];
+                        }
+                    }
+                }
+                if (!empty($ticket_id)) {
+                    if ($ticket = $modx->getObject(\'Ticket\', array(\'id\' => $ticket_id, \'deleted\' => 0))) {
+                        if ($ticket->published) {
+                            $modx->sendRedirect($modx->makeUrl($ticket_id),
+                                array(\'responseCode\' => \'HTTP/1.1 301 Moved Permanently\'));
+                        } elseif ($unp_id = $modx->getOption(\'tickets.unpublished_ticket_page\')) {
+                            $modx->sendForward($unp_id);
+                        }
+                    }
+                }
+            }
+        }
+        break;
 
+    case \'OnLoadWebDocument\':
+        $authenticated = $modx->user->isAuthenticated($modx->context->get(\'key\'));
+        $key = \'Tickets_User\';
 
-function file_get_contents_curl($file){
-    //die($file);
-    $kurl = curl_init($file);
-    curl_setopt($kurl, CURLOPT_HEADER, 0);
-    curl_setopt($kurl, CURLOPT_RETURNTRANSFER, 1);
-    //curl_setopt($kurl, CURLOPT_BINARYTRANSFER,1);
-    curl_setopt($kurl, CURLOPT_FOLLOWLOCATION,1);
-    curl_setopt($kurl, CURLOPT_USERAGENT, \'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0\');
-    curl_setopt($kurl, CURLOPT_SSLVERSION, 3);
-    curl_setopt($kurl, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt ($kurl, CURLOPT_COOKIEFILE, "cookie.txt");
-    curl_setopt ($kurl, CURLOPT_COOKIEJAR, "cookie.txt");
-    $response = curl_getinfo($kurl,CURLINFO_HTTP_CODE);
-    var_dump($response); die();
-    if ($response != 200) return false; 
-    $rawdata = curl_exec($kurl);
-    curl_close($kurl);
-    return $rawdata;
+        if (!$authenticated && !$modx->getOption(\'tickets.count_guests\')) {
+            return;
+        }
+
+        if (empty($_COOKIE[$key])) {
+            if (!empty($_SESSION[$key])) {
+                $guest_key = $_SESSION[$key];
+            } else {
+                $guest_key = $_SESSION[$key] = md5(rand() . time() . rand());
+            }
+            setcookie($key, $guest_key, time() + (86400 * 365), \'/\');
+        } else {
+            $guest_key = $_COOKIE[$key];
+        }
+
+        if (empty($_SESSION[$key])) {
+            $_SESSION[$key] = $guest_key;
+        }
+
+        if ($authenticated) {
+            /** @var TicketAuthor $profile */
+            if (!$profile = $modx->user->getOne(\'AuthorProfile\')) {
+                $profile = $modx->newObject(\'TicketAuthor\');
+                $modx->user->addOne($profile);
+            }
+            $profile->set(\'visitedon\', time());
+            $profile->save();
+        }
+        break;
+
+    case \'OnWebPageComplete\':
+        /** @var Tickets $Tickets */
+        $Tickets = $modx->getService(\'tickets\');
+        $Tickets->logView($modx->resource->get(\'id\'));
+        break;
+
+    case \'OnUserSave\':
+        /** @var modUser $user */
+        if ($mode == \'new\' && $user && !$user->getOne(\'AuthorProfile\')) {
+            $profile = $modx->newObject(\'TicketAuthor\');
+            $user->addOne($profile);
+            $profile->save();
+        }
+        break;
+
 }',
       'locked' => '0',
-      'properties' => 'a:0:{}',
+      'properties' => NULL,
       'disabled' => '0',
       'moduleguid' => '',
       'static' => '0',
-      'static_file' => '',
+      'static_file' => 'core/components/tickets/elements/plugins/plugin.tickets.php',
     ),
     7 => 
     array (
@@ -602,6 +1022,19 @@ function file_get_contents_curl($file){
           'authority' => 9999,
           'policy' => 
           array (
+            'mscategory_save' => true,
+            'msproduct_save' => true,
+            'msproduct_publish' => true,
+            'msproduct_delete' => true,
+            'msorder_save' => true,
+            'msorder_view' => true,
+            'msorder_list' => true,
+            'mssetting_save' => true,
+            'mssetting_view' => true,
+            'mssetting_list' => true,
+            'msproductfile_save' => true,
+            'msproductfile_generate' => true,
+            'msproductfile_list' => true,
           ),
         ),
       ),

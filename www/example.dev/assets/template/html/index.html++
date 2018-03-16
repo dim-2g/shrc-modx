@@ -1,0 +1,42 @@
+//= include/header.html
+
+<section class="middle">
+    <div class="container">
+        <div class="f-row f-row__content">
+            <div class="content">
+
+                <div class="text-box">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <ul>
+                        <li><a href="/about.html">/Внутренние/О нас</a></li>
+                        <li><a href="/contacts.html">/Внутренние/Доставка и др/Контакты</a></li>
+                        <li><a href="/free-delivery.html">/Внутренние/Бесплатная доставка</a></li>
+                        <li><a href="/delivery.html">/Внутренние/Доставка и др/Доставка-и-оплата</a></li>
+                        <li><a href="/deliveryterms.html">/Внутренние/Доставка и др/Сроки-доставки</a></li>
+                        <li><a href="/howtoorder.html">/Внутренние/Доставка и др/Как-заказть</a></li>
+                        <li><a href="/news.html">/Внутренние/Доставка и др/Новости,-акции,-Пресс-релиз,-статьи</a></li>
+                        <li><a href="/reviews.html">/Внутренние/Доставка и др/Отзывы</a></li>
+                        <li><a href="/catalog.html">/Каталог</a></li>
+                        <li><a href="/catalog-line.html">/Каталог-строка</a></li>
+                        <li><a href="/catalog-main.html">/Главная-каталог</a></li>
+                        <li><a href="/product.html">/Карточка-товара</a></li>
+                        <li><a href="/balanslk.html">/Внутренние/ЛК/ЛК Баланс</a></li>
+                        <li><a href="/newzapros-vin.html">/Внутренние/ЛК/ЛК-новый-запрос-по-vin</a></li>
+                        <li><a href="/zapros-vin.html">/Внутренние/ЛК/ЛК-Запросы-по-vin</a></li>
+                        <li><a href="/garage.html">/Внутренние/ЛК/ЛК-Гараж</a></li>
+                        <li><a href="/lkmain.html">/Внутренние/ЛК/ЛК-Главная</a></li>
+                        <li><a href="/main.html">/Главная-заставка</a></li>
+                        <li><a href="/main-razdel.html">/Главная заставка раздел</a></li>
+                        <li><a href="/main-inner.html">/Главная заставка внутренний раздел</a></li>
+
+                    </ul>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+
+//= include/footer.html

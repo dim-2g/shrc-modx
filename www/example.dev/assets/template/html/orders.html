@@ -1,0 +1,291 @@
+//= include/header.html
+
+<script>document.title="Личный кабинет Заказы"</script>
+
+<section class="middle">
+    <div class="container">
+        <div class="f-row f-row__content">
+            <aside class="sidebar">
+                //= include/aside-cabinet.html
+            </aside>
+            <div class="content">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/">Личный кабинет</a></li>
+                            <li class="active">Заказы</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="orders">
+                    <h1 class="header1">Заказы</h1>
+                    <div class="orders__nav">
+                        <a href="#" class="btn-o orders__balance">Баланс личного счета</a>
+                        <ul>
+                            <li><a data-tab=".tab-current" class="active" href="#">Текущие(8)</a></li>
+                            <li><a data-tab=".tab-archive" href="#">Архив</a></li>
+                            <li><a data-tab=".tab-invoice" href="#">Счета</a></li>
+                        </ul>
+                    </div>
+                    <div class="orders__tabs">
+                        <div class="catalog-posts__tab tab tab-current active">
+                            <div class="orders-filter">
+                                <div class="orders-filter__show">
+                                    <div class="orders-filter__show-btn"></div>
+                                </div>
+                                <div class="orders-filter__left">
+                                    <div class="orders-filter__daterange">
+                                        <a href="#">01.02.2016 - 11.10.2017</a>
+                                    </div>
+                                </div>
+                                <div class="orders-filter__right ">
+
+                                    <div class="sortpanel__item sortpanel__item--showpages">
+                                        <span class="sortpanel__label">Показывать по: </span>
+                                        <div class="selectricWrapper selectric"><div class="selectricHideSelect"><select name="" id="" class="selectric">
+                                            <option value="">10</option>
+                                            <option value="">25</option>
+                                            <option value="">50</option>
+                                        </select></div><div class="selectric"><p class="label">10</p><b class="button">▾</b></div><div class="selectricItems" tabindex="-1"><ul><li class="selected">10</li><li class="">25</li><li class=" last">50</li></ul></div><input class="selectricInput" type="text"></div>
+                                    </div>
+                                    <div class="pagination-order">
+                                        <ul class="pagination-order">
+                                            <li class="disabled"><a href="#" class="pagination-order__prev"></a></li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li>...</li>
+                                            <li><a href="#">32</a></li>
+                                            <li><a href="#">33</a></li>
+                                            <li class="control"><a href="#" class="pagination-order__next"></a></li>
+                                        </ul>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="orders-table">
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--filmed">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Снято</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--canceled">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Отменено</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="orders-table__item orders-table__item--apply">
+
+                                    <div class="orders-table__info">
+                                        <div class="orders-table__date">11.10.2017</div>
+                                        <div class="orders-table__order-name">БЯ-4564165</div>
+                                        <div class="orders-table__delivery-method">Самовывоз</div>
+                                    </div>
+                                    <div class="orders-table__description">
+                                        <div class="orders-table__item-info">
+                                            <span class="orders-table__name">АТ-HINO-500</span>
+                                            <span class="orders-table__descr">Накладка противотуманной фары левый хром</span>
+                                            <span class="orders-table__status">Выдано</span>
+                                        </div>
+                                        <div class="orders-table__buy-info">
+                                            <div class="orders-table__count">1 шт.х230 руб.</div>
+                                            <div class="orders-table__price">230 руб.</div>
+                                            <div class="orders-table__actions">
+                                                <a href="#" class="orders-table__cancel"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="catalog-posts__tab tab tab-archive">
+                            <h3>Архив</h3>
+                            <p>Записей не найдено</p>
+                        </div>
+                        <div class="catalog-posts__tab tab tab-invoice">
+                            <h3>Счета</h3>
+                            <p>Записей не найдено</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-box">
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+//= include/footer.html

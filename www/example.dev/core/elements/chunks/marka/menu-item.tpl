@@ -1,0 +1,1 @@
+<a class="main-brands__item main-brands__item--{$marka_class} {$classnames}" href="{$id | url}" ajax-load=".main-section"></a>

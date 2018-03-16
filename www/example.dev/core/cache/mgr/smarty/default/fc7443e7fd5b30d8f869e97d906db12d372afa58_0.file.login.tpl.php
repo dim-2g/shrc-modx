@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2018-03-06 07:23:57
+<?php /* Smarty version 3.1.27, created on 2018-03-14 09:47:22
          compiled from "/var/www/example.dev/manager/templates/default/security/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1267652595a9e420db57c94_98887205%%*/
+/*%%SmartyHeaderCode:15151386785aa8efaaace1a7_43241176%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fc7443e7fd5b30d8f869e97d906db12d372afa58' => 
     array (
       0 => '/var/www/example.dev/manager/templates/default/security/login.tpl',
-      1 => 1514271075,
+      1 => 1520274307,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1267652595a9e420db57c94_98887205',
+  'nocache_hash' => '15151386785aa8efaaace1a7_43241176',
   'variables' => 
   array (
     '_config' => 0,
@@ -30,14 +30,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a9e420de4d493_78101653',
+  'unifunc' => 'content_5aa8efaac168c0_79104106',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a9e420de4d493_78101653')) {
-function content_5a9e420de4d493_78101653 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5aa8efaac168c0_79104106')) {
+function content_5aa8efaac168c0_79104106 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_replace')) require_once '/var/www/example.dev/core/model/smarty/plugins/modifier.replace.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '1267652595a9e420db57c94_98887205';
+$_smarty_tpl->properties['nocache_hash'] = '15151386785aa8efaaace1a7_43241176';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php if ($_smarty_tpl->tpl_vars['_config']->value['manager_direction'] == 'rtl') {?>dir="rtl"<?php }?> lang="<?php echo $_smarty_tpl->tpl_vars['_config']->value['manager_lang_attribute'];?>

@@ -1,0 +1,118 @@
+.text-box{
+  .contacts{
+    &__box{
+      display: flex;
+      flex-direction: column;
+      @media($bp-larger-than-tablet){
+        flex-direction: row;
+      }
+    }
+    &__left{
+      width: 100%;
+      padding-right: 30px;
+    }
+    &__right{
+      width: 100%;
+      font-size: 14px;
+    }
+    &__header{
+      color: #313335;
+      font-size: 18px;
+      font-weight: bold;
+      //letter-spacing: 1.1px;
+      padding-left: 40px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 16px;
+    }
+    &__block {
+      margin-bottom: 46px;
+      ul {
+        list-style-type: none;
+        margin-left: 40px;
+      }
+      li {
+        margin-bottom: 0;
+        padding-left: 0;
+        &:before{
+          display: none;
+        }
+      }
+      &--phones{
+        margin-bottom: 40px;
+        li{
+          font-size: 24px;
+          color: #313335;
+          font-weight: bold;
+        }
+        a{
+          text-decoration: none;
+          color: #3c3e3f;
+          &:hover{
+            color: inherit;
+          }
+        }
+        .contacts__header{
+          padding-right: 12px;
+          margin-bottom: 10px;
+          .times{
+            font-size: 14px;
+            color: #55585e;
+            font-weight: normal;
+          }
+          &:before{
+            position: absolute;
+            content: "";
+            @include sprite($contacts-phone);
+            display: inline-block;
+            left:0px;
+            top: 0px;
+          }
+        }
+      }
+      &--mail{
+        li{
+        a{
+          color: $red;
+          font-size: 18px;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+        }
+        .contacts__header{
+          &:before{
+            position: absolute;
+            content: "";
+            @include sprite($contacts-mail);
+            display: inline-block;
+            left:0px;
+            top: 0px;
+          }
+        }
+      }
+      &--address{
+        li{
+          font-size: 18px;
+          color: #55585e;
+        }
+        .contacts__header{
+          &:before{
+            position: absolute;
+            content: "";
+            @include sprite($contacts-address);
+            display: inline-block;
+            left:0px;
+            top: 0px;
+          }
+        }
+      }
+    }
+    &__map{
+      img{
+        width: 100%;
+      }
+
+    }
+  }
+}

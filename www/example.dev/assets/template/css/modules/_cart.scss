@@ -1,0 +1,206 @@
+.cart-office {
+  padding: 20px 28px 33px;
+  border: 1px solid #cfcfcf;
+  position: relative;
+  z-index: 2;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.29);
+  margin-bottom: 62px;
+  &__header{
+    font-size: 18px;
+    font-weight: bold;
+    color: #313335;
+    margin-bottom: 16px;
+  }
+  &__work-time{
+    color: #9a9a9c;
+    p{
+      margin-bottom: 6px;
+    }
+  }
+  &__phone{
+    margin-left: 20px;
+    &:before{
+      display: inline-block;
+      content: "";
+      @include sprite($phone-small-dark);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.cart-table{
+  margin-bottom: 25px;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.29);
+  &__remove{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 0 none;
+    background: transparent;
+    &:before{
+      content: "";
+      display: inline-block;
+      @include sprite($icon-delete);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__left{
+    width: 46.5%;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  &__right{
+    width: 53.5%;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border: 1px solid #cfcfcf;
+  }
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 30px 30px;
+    border: 1px solid #cfcfcf;
+    border-top: 0 none;
+    align-items: center;
+    .cart-td{
+      &--name{
+        font-size: 16px;
+        font-weight: bold;
+        color: $red;
+        padding-right: 10px;
+        a{
+          text-decoration: none;
+        }
+      }
+      &--descr{
+        padding-right: 10px;
+      }
+      &--note{
+        padding-right: 10px;
+      }
+      &--stat{
+        font-weight: bold;
+      }
+      &--price{
+        font-weight: bold;
+      }
+    }
+  }
+}
+.cart-td{
+  &--name{
+    width: 30%;
+  }
+  &--descr{
+    width: 40%;
+  }
+  &--note{
+    width: 30%;
+  }
+
+  &--stat{
+    width: 27%;
+  }
+  &--time{
+    width: 5%;
+  }
+  &--count{
+    width: 34%;
+    text-align: center;
+  }
+  &--price{
+    width: 22%;
+  }
+  &--remove{
+    width: 12%;
+  }
+}
+
+.quontity{
+  position: relative;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  span {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: block;
+    width: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    z-index: 100;
+    border: 1px solid #cfcfcf;
+    background-color: #f1f1f1;
+    transition: $anim;
+    &.bminus {
+      left: 0;
+      border-radius: 3px;
+      line-height: 26px;
+    }
+    &.bplus {
+      right: 0;
+      line-height: 26px;
+      border-radius: 3px;
+    }
+    &:hover {
+      background: #fff;
+    }
+  }
+  input {
+    display: block;
+    margin-left: 35px;
+    width: 30px;
+    border: 1px solid #c4c4c4;
+    text-align: center;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+}
+.cart-actions{
+  margin-bottom: 30px;
+  text-align: right;
+  &__submit{
+    width: 162px;
+    height: 41px;
+    line-height: 30px;
+    text-transform: none;
+    border-radius: 3px;
+  }
+}
+
+.aside-cart{
+  &__summa{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  &__hint{
+    color: #666769;
+    margin-bottom: 20px;
+    line-height: 120%;
+  }
+  &__itogo{
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}

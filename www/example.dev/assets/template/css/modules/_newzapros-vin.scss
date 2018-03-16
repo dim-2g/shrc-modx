@@ -1,0 +1,29 @@
+.zapros{
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+  }
+  &__card{
+    width: 190px;
+    border: 1px solid #cfcfcf;
+    box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.29);
+    transition: all 0.5s cubic-bezier(0.3, 0, 0.2, 1);
+    height: 178px;
+    margin-bottom: 4px;
+  }
+  &__image{
+    margin-top: 7px;
+    text-align: center;
+    width: 184px;
+    height: 124px;
+  }
+  &__name{
+    color: #46484c;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}

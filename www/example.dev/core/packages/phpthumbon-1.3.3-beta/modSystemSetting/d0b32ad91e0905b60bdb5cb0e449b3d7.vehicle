@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'phpthumbon',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'caa5e86e1a8a975fa6871f23e6a7b756',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd0b32ad91e0905b60bdb5cb0e449b3d7',
+  'native_key' => 'phpthumbon.images_dir',
+  'object' => '{"key":"phpthumbon.images_dir","value":"images","xtype":"textfield","namespace":"phpthumbon","area":"paths","editedon":null}',
+);

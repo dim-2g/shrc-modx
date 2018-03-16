@@ -1,0 +1,1 @@
+<ul class="aside-list--{$template}{$classnames}">{$wrapper}</ul>

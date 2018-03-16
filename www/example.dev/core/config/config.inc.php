@@ -8,7 +8,7 @@ $database_user = 'root';
 $database_password = 'root';
 $database_connection_charset = 'utf8';
 $dbase = 'test001';
-$table_prefix = '2de6_';
+$table_prefix = 'd1oD2x_';
 $database_dsn = 'mysql:host=mysql;dbname=test001;charset=utf8';
 $config_options = array (
   'override_table' => 'MyISAM',
@@ -16,12 +16,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1514271164;
+$lastInstallTime = 1520274478;
 
-$site_id = 'modx5a41f1bc3abe82.03230569';
-$site_sessionname = 'SN5a41f1bc257cb';
+$site_id = 'modx5a9d8c2ede13f9.34257907';
+$site_sessionname = 'SN5a9d8b8fdbb83';
 $https_port = '443';
-$uuid = 'f0ac9161-34a4-4eee-ad13-2fb18032fb48';
+$uuid = 'd8d48d21-3475-41c0-b838-127f34055486';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/example.dev/core/';
@@ -60,10 +60,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='example.dev';
+        $http_host='avtozap.r404.ru';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? htmlspecialchars($_SERVER['HTTP_HOST'], ENT_QUOTES) : 'example.dev';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? htmlspecialchars($_SERVER['HTTP_HOST'], ENT_QUOTES) : 'avtozap.r404.ru';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }
@@ -89,6 +89,6 @@ if (!defined('MODX_LOG_LEVEL_FATAL')) {
     define('MODX_LOG_LEVEL_DEBUG', 4);
 }
 if (!defined('MODX_CACHE_DISABLED')) {
-    $modx_cache_disabled= 0;
+    $modx_cache_disabled= false;
     define('MODX_CACHE_DISABLED', $modx_cache_disabled);
 }

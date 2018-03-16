@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick.css">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="/assets/template/vendor/magnific-popup/magnific-popup.css">
+    
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/template/vendor/photobox/photobox.ie.css"><![endif]-->
+
+    <link rel="stylesheet" href="/assets/template/css/main.css">
+
+</head>
+<body>
+
+<div class="loaderArea">
+   <div class="loader">
+       <span class="cogs-live">
+            <span class="cogs-live__box"></span>
+        </span>
+   </div>
+</div>
+
+<div class="header__burger">
+    <a href="#" class="burger toogle-mobile-menu" data-mfp-src="#main-menu"></a>
+</div>
+
+<header class="header">
+    <div class="container">
+        <div class="f-row header__topline">
+            <a href="/" class="header__logo"><img itemprop="image url" src="/assets/template/img/logo.png" alt=""></a>
+            <div class="header__search search">
+                <form action="">
+                    <input type="text" class="search__input" placeholder=" Поиск по артикулу или номеру детали"/>
+                    <button class="btn-cogs search__submit">
+                        <span class="cogs-live">
+                            <span class="cogs-live__box"></span>
+                        </span>
+                    </button>
+                </form>
+            </div>
+            <div class="header__phones">
+                <a href="tel:+74955550000" class="header__phone metal-text">+7 (495) 555 00 00</a>
+            </div>
+        </div>
+        <div class="f-row topmenu">
+            <div class="topmenu__left sidebar">
+                <a href="#" class="aside-toggle">
+                    <span>Категории</span>
+                </a>
+            </div>
+            <div class="topmenu__center">
+                <a href="#topmenu" class="topmenu-toggle"></a>
+                <div id="topmenu" class="topmenu__mobile">
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li class="has-child"><a href="#">Бренды</a>
+                            <ul>
+                                <li><a href="#">Isuzu</a></li>
+                                <li class="has-child"><a href="#">Hino</a>
+                                    <ul>
+                                        <li><a href="#">300</a></li>
+                                        <li><a href="#">500</a></li>
+                                        <li><a href="#">700</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Mitsubishi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+
+                </div>
+                <ul class="topmenu__list">
+                    <li><a href="#">О нас</a></li>
+                    <li class="has-child"><a href="#">Бренды</a>
+                        <ul>
+                            <li><a href="#">Isuzu</a></li>
+                            <li class="has-child"><a href="#">Hino</a>
+                                <ul>
+                                    <li><a href="#">300</a></li>
+                                    <li><a href="#">500</a></li>
+                                    <li><a href="#">700</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Mitsubishi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+                <ul class="topmenu__cabinet">
+                    <li><a class="cabinet__label auth-toggle" href="#authform"><span>Личный кабинет</span></a>
+                        <div class="cabinet__wrapper">
+                            <div class="cabinet__box" id="authform">
+                                <div class="cabinet__header">
+                                    <span>Вход</span>
+                                    <a href="#">Регистрация</a>
+                                </div>
+                                <form action="">
+                                    <input type="text" placeholder="Логин">
+                                    <input type="password" placeholder="Пароль">
+                                    <div class="cabinet__actions">
+                                        <div class="cabinet__links">
+                                            <label class="cabinet__rememmber">
+                                                <input name="q2" type="checkbox" class="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="label"> Запомнить</span>
+                                            </label>
+                                            <a class="cabinet__forgot" href="#">Забыли пароль?</a>
+                                        </div>
+                                        <div class="cabinet__submit">
+                                            <button class="btn">Войти</button>
+                                        </div>
+                                    </div>
+                                    <div class="cabinet-oauth">
+                                        <div class="cabinet-oauth__title">Войти с помощью:</div>
+                                        <div class="cabinet-oauth__services">
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--vk"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--facebook"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--google"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--mailru"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--windows"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--yandex"></a>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="topmenu__right">
+                <img src="/assets/template/img/menu-truck.png" alt="" />
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<script>document.title="Доставка и оплата"</script>
+
+<section class="middle">
+    <div class="container">
+        <div class="f-row f-row__content">
+            <aside class="sidebar">
+                <div class="leftmenu">
+                    <ul>
+                        <li><a href="#"><span>Доставка и оплата</span></a></li>
+                        <li><a href="#"><span>Как заказать</span></a></li>
+                        <li><a href="#"><span>Пункты самовывоза</span></a></li>
+                        <li><a href="#"><span>Обмен и возврат</span></a></li>
+                        <li><a href="#"><span>Сроки доставки</span></a></li>
+                        <li><a href="#"><span>Бесплатная доставка</span></a></li>
+                        <li><a href="#"><span>Контакты</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="content">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Главная</a></li>
+                            <li class="active">Доставка и оплата</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <h1 class="header1">Доставка</h1>
+                    <p>Интернет-магазин Sumochka.com осуществляет доставку курьером по Москве, Санкт-Петербургу и всем городам России.<br />
+                        Товар также можно получить самостоятельно в одном из 1247 пунктов выдачи заказов.</p>
+
+                    <div class="delivery-city__box">
+                        <span class="delivery-city__label">Доставка в Вашем городе:</span> 
+                        <div class="delivery-city__inputs">
+                            <input type="text" class="delivery-city__input" placeholder="">
+                            <button class="btn delivery-city__btn">Узнать детали</button>
+                        </div>
+                    </div>
+
+                    <p class="header4">Курьерская доставка</p>
+
+                    <div class="delivery-courier">
+                        <p>В Вашем городе курьерскую доставку осуществляет курьерская служба IM.Logistic</p>
+                        <p>Стоимость доставки службой IM.Logistic - 299 рублей (срок доставки - 1 день)</p>
+                        <p>При покупке товаров на сумму более 4999 рублей доставка бесплатна</p>
+                    </div>
+
+                    <div class="delivery-pickup">
+                        <div class="delivery-pickup__content">
+                            <p class="header4">Самовывоз</p>
+
+                            <p>Если вам неудобно ждать курьера, то забрать заказ вы можете самостоятельно в ближайшем пункте самовывоза.<br />
+                            Доставка до пункта выдачи осуществляется бесплатно. На пункте выдачи услуга выбора не предоставляется.</p>
+
+                            <p>В Вашем городе самовывоз обеспечивают службы доставки: IM.Logistic, Boxberry</p>
+
+                            <p>Стоимость доставки службой IM.Logistic - 99 рублей (срок доставки - 1 день)<br />
+                            При покупке товаров на сумму более 4999 рублей доставка бесплатна</p>
+
+                            <p>Стоимость доставки службой Boxberry - 299 рублей (срок доставки - 1 день)<br />
+                            При покупке товаров на сумму более 7999 рублей доставка бесплатна</p>
+
+                            <div class="delivery-address__list">
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">Артельная ул, д.9Б</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">Василия Иванова ул, д.14, корпус 9</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">Гордеевская ул, д.97А</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">имени Маршала Рокоссовского К.К. ул, д.15</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">Ленина пр-кт, д.41, корпус 2</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                                <div class="delivery-address__item">
+                                    <div class="delivery-address__name">имени Маршала Рокоссовского К.К. ул, д.15</div>
+                                    <a href="#" class="delivery-address__link btn-o">Схема проезда</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-pickup__map">
+                            <img src="/assets/template/img/tmp/delivery__map.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <p class="header4">Оплата</p>
+
+                    <div class="delivery-pay__list">
+                        <div class="delivery-pay__item">
+                            <div class="delivery-pay__image">
+                                <img src="/assets/template/img/delivery-pay__card.png" alt="">
+                            </div>
+                            <div class="delivery-pay__name">
+                                Банковская карта*
+                            </div>
+                        </div>
+                        <div class="delivery-pay__item">
+                            <div class="delivery-pay__image">
+                                <img src="/assets/template/img/delivery-pay__cash.png" alt="">
+                            </div>
+                            <div class="delivery-pay__name">
+                                Наличные
+                            </div>
+                        </div>
+                        <div class="delivery-pay__item">
+                            <div class="delivery-pay__image">
+                                <img src="/assets/template/img/delivery-pay__sber.png" alt="">
+                            </div>
+                            <div class="delivery-pay__name">
+                                Банковский перевод
+                            </div>
+                        </div>
+                        <div class="delivery-pay__item">
+                            <div class="delivery-pay__image">
+                                <img src="/assets/template/img/delivery-pay__yandexmoney.png" alt="">
+                            </div>
+                            <div class="delivery-pay__name">
+                                Я-деньги
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul>
+                        <li>Оплата банковской картой online. Мы принимаем к оплате пластиковые карты Visa/Mastercard.*<br />
+                            При отказе от заказа возврат денежных средств осуществляется на ту карту, с которой была совершена оплата.</li>
+                        <li>Оплата наличными курьеру при получении заказа. Курьер выдает накладную с кассовым чеком.</li>
+                        <li>Банковским переводом можно оплатить заказ, или воспользоваться системой Сбербанк ОнЛ@йн.</li>
+                        <li>Юридические лица могут оплачивать заказы по безналичному расчету. Счет будет выслан на электронную почту.</li>
+                        <li>Яндекс Деньги — это удобная платежная система, созданная для безопасной оплаты покупок в интернете. Номер кошелька 41001113899899</li>
+                    </ul>
+
+                    <p class="text__small-bold">* Безопасность онлайн платежей</p>
+                    <p class="text__small">Предоставляемая Вами персональная информация (имя, адрес, телефон, e-mail, номер кредитной карты)является конфиденциальной и не подлежит разглашению. Данные Вашей кредитной карты передаютсятолько в зашифрованном виде и не сохраняются на нашем Web-сервере.Безопасность обработки Интернет-платежей гарантирует ЗАО «Банк Русский Cтандарт». Все операции сплатежными картами происходят в соответствии с требованиями VISA International, MasterCard, AmericanExpress и других платежных систем. При передаче информации используются специальные технологиибезопасности карточных онлайн-платежей, обработка данных ведется на безопасном высокотехнологичномсервере процессинговой компании. В случае использования регулярных платежей, при совершении первойоперации номер Вашей карты и срок действия будут сохранены на стороне Банка в безопасном хранилище.По факту выполнения или оказания услуг со стороны компании, данные будут удалены автоматически. Всересурсы Банка соответствуют стандартам безопасности PCI DSS.При проведении операции, Вы будете дополнительно перенаправлены на страницу Банка-Эмитента дляввода подтверждающего кода безопасности (в случае если банк, выпустивший Вашу карту поддерживаеттехнологию 3DSecure, и Ваша карта также поддерживает данную программу).3D Secure – процедура дополнительной аутентификации держателя карты, предназначенная дляобеспечения гарантированной безопасности платежей по банковским картам в Сети Интернет.Технологическое решение 3D Secure имеет свой собственный бренд в каждой из платежных систем:</p>
+
+                    <p class="text__small">Verified by Visa – по картам платежной системы Visa Int.<br />
+                        MasterCard Secure Code – по картам, выпущенным в рамках MasterCard Int<br />
+                        SafeKey и JSecure – платежная система American Express и JCB соответственно.</p>
+
+                    <p class="text__small">В независимости от названия, технология 3D Secure предполагает защищенную сессию при проведенииинтернет-транзакции и позволяет пользователям-держателям карты, подтвердить правомерность операциидля Банка выпустивший карту.В случае возникновения вопросов по поводу данной конфиденциальности предоставляемой Вамиинформации, Вы можете связаться с ЗАО «Банк Русский Cтандарт» по телефону: 8 (800) 200-6-200.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+    <a href="#" class="footer__toggle footer-toggle">Меню</a>
+    <div class="container">
+
+        <div class="f-row footer__box">
+            <div class="footer__left sidebar">
+                <div class="footer__logo">
+                    <img src="/assets/template/img/footer__logo.png" alt="">
+                </div>
+                <div class="footer-review">
+                    <div class="footer-review__caption">Отзывы</div>
+                    <div class="footer-review__text">Очень хороший магазин</div>
+                    <div class="footer-review__author">Елена</div>
+                    <div class="footer-review__stars">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="footer-review__more">
+                        <a href="#review">Еще отзывы (3150)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__center">
+                <div class="footer-box">
+                    <div class="footer-box__caption">Информация</div>
+                    <ul class="footer-box__list">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Статьи</a></li>
+                        <li><a href="#">Вопросы и отзывы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <div class="footer-box__caption">Для клиентов</div>
+                    <ul class="footer-box__list">
+                        <li><a href="#">Как заказать</a></li>
+                        <li><a href="#">Обмен и возврат</a></li>
+                        <li><a href="#">Гарантия и подленность</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Политика конфидециальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <div class="footer-box__caption">Доставка</div>
+                    <ul class="footer-box__list">
+                        <li><a href="#">Пункты самовывоза</a></li>
+                        <li><a href="#">Курьерская доставка</a></li>
+                        <li><a href="#">Сроки доставки</a></li>
+                        <li><a href="#">Бесплатная доставка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <div class="footer-box__caption">Наши реквизиты</div>
+                    <ul class="footer-box__list">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-box footer-box__double">
+                    <div class="footer-box__top">
+                        <div class="footer-box__caption">Наши партнеры</div>
+                        <div class="footer-box__payments pay__list">
+                            <span class="pay__yandex-walet"></span>
+                            <span class="pay__sberbank"></span>
+                            <span class="pay__visa"></span>
+                            <span class="pay__mastercard"></span>
+                        </div>
+                    </div>
+                    <div class="footer-box__bottom">
+                        <div class="footer-box__caption">Наши соц сети</div>
+                        <div class="footer-box__social social__list">
+                            <a href="#" class="social__vk"></a>
+                            <a href="#" class="social__instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__right">
+                <a href="tel:+74955550000" class="footer__phone metal-text">+7 (495) 555 00 00</a>
+                <div class="yandex-review">
+                    <img src="/assets/template/img/tmp/yandex-review.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="f-row copyright">
+            Copyright 2018 · All rights reserved.
+        </div>
+    </div>
+</footer>
+
+    <script src="assets/template/vendor/jquery-3.2.1.min.js"></script>
+    <script src="assets/template/vendor/slick/slick.js"></script>
+    <script src="assets/template/vendor/magnific-popup/magnific-popup.js"></script>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="/assets/template/vendor/selectric/selectric.css" />
+    <script src="/assets/template/vendor/selectric/jquery.selectric.min.js"></script>
+    <!--script src="assets/template/vendor/wow.min.js"></script>
+    <script>
+        new WOW({
+            live: true
+        }).init();
+    </script-->
+    <script src="assets/template/js/scripts.js"></script>
+
+
+
+    <script type="text/javascript" src="/assets/components/msearch2/js/web/default.js"></script>
+    <script type="text/javascript" src="/assets/components/minishop2/js/web/default.js?v=14f1a1db65"></script>
+
+    <script type="text/javascript">
+        if ($("#mse2_mfilter").length) {
+            if (window.location.hash != "" && mSearch2.Hash.oldbrowser()) {
+                var uri = window.location.hash.replace("#", "?");
+                window.location.href = document.location.pathname + uri;
+            }
+            else {
+                mSearch2.initialize("body");
+            }
+        }
+    </script>
+
+</body>
+</html>

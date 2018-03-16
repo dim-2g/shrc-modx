@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- @if NODE_ENV='development' -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick.css">
+    <link rel="stylesheet" href="/assets/template/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="/assets/template/vendor/magnific-popup/magnific-popup.css">
+    
+    <!--[if lt IE 9]><link rel="stylesheet" href="/assets/template/vendor/photobox/photobox.ie.css"><![endif]-->
+
+    <link rel="stylesheet" href="/assets/template/css/main.css">
+    <!-- @endif -->
+
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="assets/template/css/main.min.css">
+    <!-- @endif -->
+</head>
+<body>
+
+<div class="loaderArea">
+   <div class="loader">
+       <span class="cogs-live">
+            <span class="cogs-live__box"></span>
+        </span>
+   </div>
+</div>
+
+<div class="header__burger">
+    <a href="#" class="burger toogle-mobile-menu" data-mfp-src="#main-menu"></a>
+</div>
+
+<header class="header">
+    <div class="container">
+        <div class="f-row header__topline">
+            <a href="/" class="header__logo"><img itemprop="image url" src="/assets/template/img/logo.png" alt=""></a>
+            <div class="header__search search">
+                <form action="">
+                    <input type="text" class="search__input" placeholder=" Поиск по артикулу или номеру детали"/>
+                    <button class="btn-cogs search__submit">
+                        <span class="cogs-live">
+                            <span class="cogs-live__box"></span>
+                        </span>
+                    </button>
+                </form>
+            </div>
+            <div class="header__phones">
+                <a href="tel:+74955550000" class="header__phone metal-text">+7 (495) 555 00 00</a>
+            </div>
+        </div>
+        <div class="f-row topmenu">
+            <div class="topmenu__left sidebar">
+                <a href="#" class="aside-toggle">
+                    <span>Категории</span>
+                </a>
+            </div>
+            <div class="topmenu__center">
+                <a href="#topmenu" class="topmenu-toggle"></a>
+                <div id="topmenu" class="topmenu__mobile">
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li class="has-child"><a href="#">Бренды</a>
+                            <ul>
+                                <li><a href="#">Isuzu</a></li>
+                                <li class="has-child"><a href="#">Hino</a>
+                                    <ul>
+                                        <li><a href="#">300</a></li>
+                                        <li><a href="#">500</a></li>
+                                        <li><a href="#">700</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Mitsubishi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+
+                </div>
+                <ul class="topmenu__list">
+                    <li><a href="#">О нас</a></li>
+                    <li class="has-child"><a href="#">Бренды</a>
+                        <ul>
+                            <li><a href="#">Isuzu</a></li>
+                            <li class="has-child"><a href="#">Hino</a>
+                                <ul>
+                                    <li><a href="#">300</a></li>
+                                    <li><a href="#">500</a></li>
+                                    <li><a href="#">700</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Mitsubishi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+                <ul class="topmenu__cabinet">
+                    <li><a class="cabinet__label auth-toggle" href="#authform"><span>Личный кабинет</span></a>
+                        <div class="cabinet__wrapper">
+                            <div class="cabinet__box" id="authform">
+                                <div class="cabinet__header">
+                                    <span>Вход</span>
+                                    <a href="#">Регистрация</a>
+                                </div>
+                                <form action="">
+                                    <input type="text" placeholder="Логин">
+                                    <input type="password" placeholder="Пароль">
+                                    <div class="cabinet__actions">
+                                        <div class="cabinet__links">
+                                            <label class="cabinet__rememmber">
+                                                <input name="q2" type="checkbox" class="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="label"> Запомнить</span>
+                                            </label>
+                                            <a class="cabinet__forgot" href="#">Забыли пароль?</a>
+                                        </div>
+                                        <div class="cabinet__submit">
+                                            <button class="btn">Войти</button>
+                                        </div>
+                                    </div>
+                                    <div class="cabinet-oauth">
+                                        <div class="cabinet-oauth__title">Войти с помощью:</div>
+                                        <div class="cabinet-oauth__services">
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--vk"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--facebook"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--google"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--mailru"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--windows"></a>
+                                            <a href="" class="cabinet-oauth__service cabinet-oauth__service--yandex"></a>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="topmenu__right">
+                <img src="/assets/template/img/menu-truck.png" alt="" />
+            </div>
+        </div>
+    </div>
+
+</header>
+

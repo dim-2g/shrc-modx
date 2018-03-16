@@ -1,0 +1,228 @@
+.register{
+  &__type{
+    margin-bottom: 10px;
+    margin-top: -6px;
+    a{
+      text-decoration: none;
+      color: #53575e;
+      &:hover{
+        color: $red;
+      }
+    }
+  }
+  &__type-link{
+    padding-left: 23px;
+    position: relative;
+    margin-right: 18px;
+    margin-bottom: 10px;
+    display: inline-block;
+    &:before{
+      display: inline-block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      @include sprite($radio);
+    }
+    &--active{
+      &:before{
+        @include sprite($radio-active);
+      }
+    }
+  }
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-direction: column;
+    @media($bp-larger-than-desktophd){
+      flex-direction: row;
+    }
+  }
+  &__form-box{
+    max-width: 460px;
+    flex: 1;
+    margin-bottom: 30px;
+    @media($bp-larger-than-phablet) {
+      margin-right: 30px;
+    }
+  }
+  &__map-box{
+    max-width: 895px;
+    flex: 1;
+    img{
+      width: 100%;
+    }
+  }
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: flex-start;
+    flex-direction: column;
+    @media($bp-larger-than-phablet){
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__name{
+    width: 100%;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    @media($bp-larger-than-phablet){
+      margin-bottom: 0;
+      width: 170px;
+    }
+  }
+  &__value{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    input[type="text"]{
+      width: 100%;
+      height: 36px;
+      line-height: 36px;
+      background-color: #fff;
+      border: 1px solid #bbbbbb;
+      padding: 2px 16px;
+    }
+
+    .selectric{
+      border: 0 none;
+      background-color: #fff;
+      &.selectricWrapper{
+        border: 1px solid #bbbbbb;
+        margin-bottom: 0;
+      }
+      p{
+        height: 34px;
+      }
+      .button{
+        height: 34px;
+      }
+      li{
+        margin: 0;
+        &:before{
+          display: none;
+        }
+      }
+      .label{
+        font-size: 14px;
+        padding: 2px 16px;
+        line-height: 28px;
+      }
+    }
+    &--oao{
+      width: 75px;
+      padding-right: 10px;
+      flex-shrink: 0;
+      .selectric{
+        width: 100%;
+        .label{
+          padding: 2px 8px;
+          margin-right: 25px;
+        }
+        .button{
+          width: 25px;
+        }
+      }
+    }
+    &--two{
+      width: 100%;
+    }
+    &--type{
+      .selectric{
+        width: 100%;
+      }
+    }
+    &--ofice {
+      .selectric {
+        width: 100%;
+      }
+    }
+    &--region{
+      width: 40px;
+      margin-right: 10px;
+      input[type="text"]{
+        padding-left: 2px;
+        padding-right: 2px;
+        text-align: center;
+      }
+    }
+    &--code{
+      width: 25px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__agree{
+  font-size: 14px;
+  color: #53575e;
+  margin-bottom: 27px;
+  a{
+    text-decoration: none;
+    }
+    input{
+      margin-right: 14px;
+    }
+  }
+  &__bottom{
+    max-width: 988px;
+    margin-bottom: 54px;
+    input{
+      margin-right: 14px;
+    }
+    label{
+      position: relative;
+      display: inline-block;
+      &.register-agree__personal{
+        .checkbox-custom{
+          position: absolute;
+          top: 1px;
+          left: 0;
+        }
+      }
+    }
+    .checkbox-custom{
+      position: absolute;
+      top: 3px;
+      left: 0;
+    }
+    .label{
+      padding-left: 30px;
+    }
+  }
+  &__end{
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-left: 24px;
+    padding-right: 28px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-phablet){
+      margin-bottom: 100px;
+    }
+  }
+  &__submit{
+    text-align: center;
+    @media($bp-larger-than-phablet){
+      text-align: left;
+    }
+  }
+}
+.register-agree{
+  &__rules{
+    font-size: 14px;
+    color: #53575e;
+    margin-bottom: 27px;
+  }
+  &__personal{
+    font-size: 12px;
+    color: #999ba0;
+    line-height: 150%;
+  }
+
+}
